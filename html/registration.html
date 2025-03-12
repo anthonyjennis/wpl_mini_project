@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <header>
+        <h1>Student Productivity App*</h1>
+    </header>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="about us.html">About</a>
+        <a href="contact us.html">Contact</a>
+        <a href="login.html">Login</a>
+        <a href="registration.html">Register</a>
+        <a href="catalog.html">Catalog</a>
+    </nav>
+    <div class="login_Div">
+        <h2>Register</h2>
+        <form action="registration_post.php" method="POST">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required class="form">
+            <label for="gender">Gender:</label><br>
+            <input type="radio" id="male" name="gender" value="male" class="radio">
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" value="female" class="radio">
+            <label for="female">Female</label><br>
+            <input type="radio" id="other" name="gender" value="other" class="radio">
+            <label for="other">Other</label><br><br>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required class="form">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required class="form">
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    <footer>
+        <p>* The name of the app <s>may</s> will change</p>
+    </footer>
+</body>
+</html>
