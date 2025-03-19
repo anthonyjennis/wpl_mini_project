@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>RSS Feed - Daily</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation (same as other pages) -->
+  <header>
+    <nav class="navbar">
+      <div class="logo"><a href="index.html">Daily</a></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="todo.html">To-Do</a></li>
+        <li><a href="rss.html">RSS Feed</a></li>
+        <li><a href="tracker.html">Tracker</a></li>
+        <li><a href="notes.html">Notes</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html" class="btn login-btn">Login</a></li>
+        <li><a href="signup.html" class="btn signup-btn">Sign Up</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero/Heading -->
+    <section class="feeds-hero">
+      <h1>My Feeds</h1>
+    </section>
+
+    <!-- Horizontally Scrollable Feeds -->
+    <section class="feeds-scroll-container">
+      <!-- Example feed boxes (replace with dynamic feeds) -->
+      <div class="feed-box">Feed One</div>
+      <div class="feed-box">Feed Two</div>
+      <div class="feed-box">Random Feed</div>
+      <div class="feed-box">Lorem Ipsum</div>
+    </section>
+
+    <!-- Articles from all feeds -->
+    <section class="feed-articles">
+      <article class="article-card">
+        <h2>Lorem Ipsum Dolor</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Praesent convallis augue in neque fermentum, sed tristique metus imperdiet.
+        </p>
+      </article>
+      <article class="article-card">
+        <h2>Aliquam Ultrices</h2>
+        <p>
+          Aliquam ultrices felis a suscipit auctor. Morbi mollis est 
+          eget augue tempus, eget suscipit nisl gravida.
+        </p>
+      </article>
+      <article class="article-card">
+        <h2>Curabitur In Luctus</h2>
+        <p>
+          Curabitur in luctus nibh, sed consequat metus. Nunc sed tincidunt diam. 
+          Fusce vulputate laoreet consequat.
+        </p>
+      </article>
+    </section>
+
+    <!-- Floating button to add new feed -->
+    <button class="fab-add-feed" title="Add new feed">+</button>
+
+    <div class="modal" id="addFeedModal">
+      <div class="modal-content">
+        <h3>Add New Feed</h3>
+        <input type="text" placeholder="Paste RSS Link Here" />
+        <div class="modal-buttons">
+          <button class="btn primary-btn">Add Feed</button>
+          <button class="btn btn-close">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Daily. All rights reserved.</p>
+  </footer>
+</body>
+</html>

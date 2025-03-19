@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes - Daily</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo"><a href="index.html">Daily</a></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="todo.html">To-Do</a></li>
+        <li><a href="rss.html">RSS Feed</a></li>
+        <li><a href="tracker.html">Tracker</a></li>
+        <li><a href="notes.html">Notes</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html" class="btn login-btn">Login</a></li>
+        <li><a href="signup.html" class="btn signup-btn">Sign Up</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Notes Content -->
+  <main class="notes-page">
+    <!-- Sidebar for hierarchical notes list -->
+    <aside class="notes-sidebar">
+      <h2>My Notes</h2>
+      <ul class="notes-tree">
+        <li>
+          <span class="note-item">Project Ideas</span>
+          <ul>
+            <li><span class="note-item">App UI Design</span></li>
+            <li><span class="note-item">Marketing Plan</span></li>
+          </ul>
+        </li>
+        <li>
+          <span class="note-item">Personal</span>
+          <ul>
+            <li><span class="note-item">Daily Journal</span></li>
+            <li><span class="note-item">Recipes</span></li>
+          </ul>
+        </li>
+        <li>
+          <span class="note-item">Work</span>
+          <ul>
+            <li><span class="note-item">Meeting Notes</span></li>
+            <li><span class="note-item">Research</span></li>
+          </ul>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Editor area for the selected note -->
+    <section class="notes-editor">
+      <input type="text" class="editor-title" placeholder="Enter note title...">
+      <textarea class="editor-content" placeholder="Start writing your note here..."></textarea>
+    </section>
+  </main>
+
+  <!-- Floating Button for adding a new note -->
+  <button class="fab-add-note" title="Add new note">+</button>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Daily. All rights reserved.</p>
+  </footer>
+</body>
+</html>

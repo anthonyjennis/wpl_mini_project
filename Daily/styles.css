@@ -1,0 +1,653 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Navigation */
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .logo a {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .nav-links li {
+    margin: 5px 10px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #007bff;
+  }
+  
+  /* Button style for Login and Sign Up */
+  .btn {
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    padding: 5px 12px;
+    font-weight: bold;
+  }
+  
+  .login-btn {
+    background-color: #fff;
+    color: #007bff;
+  }
+  
+  .signup-btn {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .signup-btn:hover {
+    background-color: #fff;
+  }
+  
+  .login-btn:hover {
+    background-color: #e6f0ff;
+  }
+  
+  /* Hero Section */
+  .hero {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #e9f2ff;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #007bff;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+  }
+  
+  /* Tech Stack Section */
+  .tech-stack {
+    padding: 40px 20px;
+    background-color: #fff;
+  }
+  
+  .tech-stack h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #007bff;
+  }
+  
+  .tech-stack ul {
+    list-style: none;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0;
+  }
+  
+  .tech-stack li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Features Section */
+  .features {
+    padding: 40px 20px;
+    background-color: #f0f0f0;
+  }
+  
+  .features h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #007bff;
+  }
+  
+  .features-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding-bottom: 10px;
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+  
+  .feature-card {
+    flex: 0 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    min-width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    color: #777;
+    border-top: 1px solid #ddd;
+  }
+
+  /* additions for Login, Sign-Up, and Contact Pages */
+
+.auth-container, .contact-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .auth-container h2, .contact-container h2 {
+    margin-bottom: 20px;
+    color: #007bff;
+  }
+  
+  .auth-container form, .contact-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .auth-container input, .contact-container input,
+  .contact-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .contact-container textarea {
+    height: 100px;
+    resize: vertical;
+  }
+  
+  .auth-container button, .contact-container button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+  
+  .auth-container button:hover, .contact-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  .auth-container p {
+    margin-top: 15px;
+    font-size: 0.9rem;
+  }
+  
+  .auth-container a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .auth-container a:hover {
+    text-decoration: underline;
+  }
+  
+  /* About Page Hero Section */
+.about-hero {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #e9f2ff;
+  }
+  
+  .about-hero h1 {
+    font-size: 2.5rem;
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  .about-hero p {
+    font-size: 1.2rem;
+  }
+  
+  /* Team Section */
+  .team {
+    padding: 40px 20px;
+    background-color: #fff;
+  }
+  
+  .team h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #007bff;
+  }
+  
+  /* Team Cards Container */
+  .team-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  /* Team Member Card */
+  .card {
+    background-color: #fff;
+    padding: 20px;
+    min-width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #007bff;
+  }
+  
+  .card p {
+    margin-bottom: 5px;
+    font-size: 1rem;
+  }
+
+  /* TO-DO */
+  /* My Lists Section */
+.my-lists-section {
+    padding: 40px 20px;
+    background-color: #fff;
+    margin-bottom: 20px;
+  }
+  
+  .my-lists-section h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #007bff;
+  }
+  
+  /* Lists Container -> Grid of Cards */
+  .lists-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+  }
+  
+  .list-card {
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .list-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .task-count {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 4px 8px;
+    border-radius: 20px;
+  }
+  
+  /* Category Tasks Section */
+  .category-section {
+    padding: 40px 20px;
+    background-color: #f0f0f0;
+  }
+  
+  .category-section h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #007bff;
+  }
+  
+  .task-list {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .task-list li {
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  .task-list label {
+    cursor: pointer;
+  }
+  
+  /* Floating Action Buttons (FAB) */
+  .fab {
+    position: fixed;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    border: none;
+    color: #fff;
+    background-color: #007bff;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    text-align: center;
+    line-height: 50px;
+  }
+
+  .fab-lists {
+    right: 20px; /* For My Lists section */
+  }
+  
+  .fab-tasks {
+    right: 90px; /* For Category Tasks section */
+  }
+  
+  .fab:hover {
+    background-color: #0056b3;
+  }
+  
+  /***************************************
+  RSS Feed Page Styles
+***************************************/
+
+/* Hero Section */
+.feeds-hero {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #e9f2ff; /* Light blue background for hero */
+  }
+  
+  .feeds-hero h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #007bff;
+  }
+  
+  /* Horizontally Scrollable Feeds */
+  .feeds-scroll-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff;
+  }
+  
+  .feed-box {
+    flex: 0 0 auto;
+    min-width: 180px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    cursor: pointer;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Articles Section */
+  .feed-articles {
+    padding: 40px 20px;
+    background-color: #f0f0f0;
+  }
+  
+  .feed-articles .article-card {
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  .feed-articles .article-card h2 {
+    margin-bottom: 10px;
+    color: #007bff;
+    font-size: 1.3rem;
+  }
+  
+  .feed-articles .article-card p {
+    line-height: 1.5;
+  }
+  
+  /* Floating Action Button for Adding Feed */
+  .fab-add-feed {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    border: none;
+    color: #fff;
+    background-color: #007bff;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    text-align: center;
+    line-height: 50px;
+    z-index: 100;
+  }
+  
+  .fab-add-feed:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Optional Modal for Adding Feeds */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    width: 300px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .modal-content h3 {
+    margin-bottom: 20px;
+    color: #007bff;
+  }
+  
+  .modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .modal-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  /* Close Button inside the modal */
+  .btn-close {
+    background-color: #f7f7f7;
+    color: #333;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    padding: 10px 20px;
+  }
+  
+  .btn-close:hover {
+    background-color: #ddd;
+  }
+  
+
+  /***************************************
+  Notes Page Styles
+***************************************/
+
+/* Main Notes Page Layout */
+.notes-page {
+    display: flex;
+    background-color: #f7f7f7;
+    padding: 20px;
+    min-height: calc(100vh - 100px); /* Adjust based on header/footer height */
+  }
+  
+  /* Sidebar */
+  .notes-sidebar {
+    width: 250px;
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+    margin-right: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  
+  .notes-sidebar h2 {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Hierarchical Notes Tree */
+  .notes-tree {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .notes-tree li {
+    margin-bottom: 10px;
+  }
+  
+  .note-item {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #e9f2ff;
+    color: #007bff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .note-item:hover {
+    background-color: #d0e4ff;
+  }
+  
+  .notes-tree ul {
+    margin-top: 5px;
+    margin-left: 15px;
+  }
+  
+  /* Editor Section */
+  .notes-editor {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .editor-title {
+    font-size: 1.8rem;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 15px;
+    padding: 10px;
+    outline: none;
+    color: #333;
+  }
+  
+  .editor-content {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    resize: none;
+    outline: none;
+    color: #333;
+  }
+  
+  /* Floating Action Button for Adding a Note */
+  .fab-add-note {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    z-index: 100;
+  }
+  
+  .fab-add-note:hover {
+    background-color: #0056b3;
+  }
+  
