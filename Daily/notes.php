@@ -14,7 +14,7 @@ if (!$conn) {
 }
 
 // Handle note submission (Insert/Update)
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['save_note'])) {
     $title = $_POST['title'];
     $content = $_POST['content'];
 
@@ -23,6 +23,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = "INSERT INTO notes (title, text) VALUES ('$title', '$content') ON DUPLICATE KEY UPDATE text='$content'";
         mysqli_query($conn, $sql);
     }
+}
+
+// Handle note deletion
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_note'])) {
+    $note_id = $_POST['note_id'];
+    $deleteQuery = "DELETE FROM notes WHERE id='$note_id'";
+    mysqli_query($conn, $deleteQuery);
 }
 
 // Fetch all notes
@@ -42,9 +49,10 @@ while ($row = mysqli_fetch_assoc($notesResult)) {
   <title>Notes - Daily</title>
   <link rel="stylesheet" href="styles.css">
   <script>
-    function loadNote(title, text) {
+    function loadNote(id, title, text) {
         document.querySelector('.editor-title').value = title;
         document.querySelector('.editor-content').value = text;
+        document.querySelector("input[name='note_id']").value = id;
     }
   </script>
 </head>
@@ -71,16 +79,20 @@ while ($row = mysqli_fetch_assoc($notesResult)) {
       <h2>My Notes</h2>
       <ul class="notes-tree">
         <?php foreach ($notes as $note) { ?>
-            <li><span class="note-item" onclick="loadNote('<?php echo addslashes($note['title']); ?>', '<?php echo addslashes($note['text']); ?>')"><?php echo $note['title']; ?></span></li>
+            <li>
+                <span class="note-item" onclick="loadNote('<?php echo $note['id']; ?>', '<?php echo addslashes($note['title']); ?>', '<?php echo addslashes($note['text']); ?>')"><?php echo $note['title']; ?></span>
+            </li>
         <?php } ?>
       </ul>
     </aside>
 
     <section class="notes-editor">
       <form method="POST" action="notes.php">
+        <input type="hidden" name="note_id">
         <input type="text" class="editor-title" name="title" placeholder="Enter note title..." required>
         <textarea class="editor-content" name="content" placeholder="Start writing your note here..." required></textarea>
-        <button type="submit">Save Note</button>
+        <button type="submit" name="save_note">Save Note</button>
+        <button type="submit" name="delete_note">Delete Note</button>
       </form>
     </section>
   </main>
