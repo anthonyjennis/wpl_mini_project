@@ -31,12 +31,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = mysqli_query($conn, $sql);
         
         if ($result) {
-            echo "<script>alert('Thank you for contacting us, $name. We will get back to you soon.'); window.location.href = 'contact.html';</script>";
+            echo "<script>alert('Thank you for contacting us, $name. We will get back to you soon.'); window.location.href = 'contact.php';</script>";
         } else {
-            echo "<script>alert('Error: " . mysqli_error($conn) . "'); window.location.href = 'contact.html';</script>";
+            echo "<script>alert('Error: " . mysqli_error($conn) . "'); window.location.href = 'contact.php';</script>";
         }
     }
 }
+
 
 // Close the database connection
 mysqli_close($conn);
@@ -66,7 +67,7 @@ mysqli_close($conn);
         <li><a href="todo.html">To-Do</a></li>
         <li><a href="rss.html">RSS Feed</a></li>
         <li><a href="tracker.html">Tracker</a></li>
-        <li><a href="notes.html">Notes</a></li>
+        <li><a href="notes.php">Notes</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.php">Contact</a></li>
       </ul>
