@@ -12,13 +12,13 @@
       <div class="logo"><a href="index.html">Daily</a></div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="todo.html">To-Do</a></li>
-        <li><a href="rss.html">RSS Feed</a></li>
+        <li><a href="todo.php">To-Do</a></li>
+        <li><a href="rss.php">RSS Feed</a></li>
         <li><a href="tracker.html">Tracker</a></li>
         <li><a href="notes.php">Notes</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.php">Contact</a></li>
-        <li><a href="signup.html" class="btn signup-btn">Sign Up</a></li>
+        <li><a href="signup.php" class="btn signup-btn">Sign Up</a></li>
       </ul>
     </nav>
   </header>
@@ -30,7 +30,7 @@
       <input type="password" name="password" placeholder="Password" required>
       <button type="submit" class="btn primary-btn">Login</button>
     </form>
-    <p class="auth-link">New user? <a href="signup.html">Sign up</a></p>
+    <p class="auth-link">New user? <a href="signup.php">Sign up</a></p>
   </main>
 </body>
 </html>

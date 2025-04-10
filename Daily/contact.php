@@ -64,8 +64,8 @@ mysqli_close($conn);
       <div class="logo"><a href="index.html">Daily</a></div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="todo.html">To-Do</a></li>
-        <li><a href="rss.html">RSS Feed</a></li>
+        <li><a href="todo.php">To-Do</a></li>
+        <li><a href="rss.php">RSS Feed</a></li>
         <li><a href="tracker.html">Tracker</a></li>
         <li><a href="notes.php">Notes</a></li>
         <li><a href="about.html">About</a></li>
