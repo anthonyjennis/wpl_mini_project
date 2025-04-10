@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,17 +13,23 @@
 <body>
   <header>
     <nav class="navbar">
-      <div class="logo"><a href="index.html">Daily</a></div>
+      <div class="logo"><a href="index.php">Daily</a></div>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="todo.php">To-Do</a></li>
-        <li><a href="rss.php">RSS Feed</a></li>
-        <li><a href="tracker.html">Tracker</a></li>
-        <li><a href="notes.php">Notes</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="index.php">Home</a></li>
+        <?php if (isset($_SESSION['email'])): ?>
+          <li><a href="todo.php">To-Do</a></li>
+          <li><a href="rss.php">RSS Feed</a></li>
+          <li><a href="tracker.html">Tracker</a></li>
+          <li><a href="notes.php">Notes</a></li>
+        <?php endif; ?>
+        <li><a href="about.php">About</a></li>
         <li><a href="contact.php">Contact</a></li>
-        <li><a href="login.php" class="btn login-btn">Login</a></li>
-        <li><a href="signup.php" class="btn signup-btn">Sign Up</a></li>
+        <?php if (!isset($_SESSION['email'])): ?>
+          <li><a href="login.php" class="btn login-btn">Login</a></li>
+          <li><a href="signup.php" class="btn signup-btn">Sign Up</a></li>
+        <?php else: ?>
+          <li><a href="logout.php" class="btn logout-btn">Sign Out</a></li>
+        <?php endif; ?>
       </ul>
     </nav>
   </header>

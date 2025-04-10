@@ -1,26 +1,26 @@
 <?php
-// Database configuration
+session_start();
+
 $host = "localhost";
 $username = "root";
 $password = "";
 $dbname = "Daily";
 
-// Create connection
+// Connect to DB
 $conn = mysqli_connect($host, $username, $password, $dbname);
-
-// Check connection
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-// Handle form submission
+$signupError = "";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = htmlspecialchars($_POST['name']);
     $email = htmlspecialchars($_POST['email']);
     $password = htmlspecialchars($_POST['password']);
 
     if (empty($name) || empty($email) || empty($password)) {
-        echo "<script>alert('All fields are required.');</script>";
+        $signupError = "All fields are required.";
     } else {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
@@ -28,9 +28,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = mysqli_query($conn, $sql);
 
         if ($result) {
-            echo "<script>alert('Account created successfully! Please log in.'); window.location.href = 'login.html';</script>";
+            echo "<script>alert('Account created successfully! Please log in.'); window.location.href = 'login.php';</script>";
+            exit();
         } else {
-            echo "<script>alert('Error: " . mysqli_error($conn) . "');</script>";
+            $signupError = "Error: " . mysqli_error($conn);
         }
     }
 }
@@ -49,14 +50,10 @@ mysqli_close($conn);
 <body>
   <header>
     <nav class="navbar">
-      <div class="logo"><a href="index.html">Daily</a></div>
+      <div class="logo"><a href="index.php">Daily</a></div>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="todo.php">To-Do</a></li>
-        <li><a href="rss.php">RSS Feed</a></li>
-        <li><a href="tracker.html">Tracker</a></li>
-        <li><a href="notes.php">Notes</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="about.php">About</a></li>
         <li><a href="contact.php">Contact</a></li>
         <li><a href="login.php" class="btn login-btn">Login</a></li>
       </ul>
@@ -65,6 +62,13 @@ mysqli_close($conn);
 
   <main class="auth-container">
     <h2>Create an Account</h2>
+
+    <?php if (!empty($signupError)): ?>
+      <p style="color:red; font-weight:bold;">
+        <?= $signupError ?>
+      </p>
+    <?php endif; ?>
+
     <form method="POST" class="auth-form">
       <input type="text" name="name" placeholder="Full Name" required />
       <input type="email" name="email" placeholder="Email" required />

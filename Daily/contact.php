@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 // Database configuration
 $host = "localhost";
 $username = "root";
@@ -13,23 +15,18 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-// Check if the form is submitted
+// Handle form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get the form data
     $name = htmlspecialchars($_POST['name']);
     $email = htmlspecialchars($_POST['email']);
     $message = htmlspecialchars($_POST['message']);
 
-    // Validate the form data
     if (empty($name) || empty($email) || empty($message)) {
-        echo "<script>alert('All fields are required.'); window.location.href = 'contact.html';</script>";
+        echo "<script>alert('All fields are required.'); window.location.href = 'contact.php';</script>";
     } else {
-        // Prepare SQL query
         $sql = "INSERT INTO contact (name, email, message) VALUES ('$name', '$email', '$message')";
-        
-        // Execute query
         $result = mysqli_query($conn, $sql);
-        
+
         if ($result) {
             echo "<script>alert('Thank you for contacting us, $name. We will get back to you soon.'); window.location.href = 'contact.php';</script>";
         } else {
@@ -38,17 +35,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-
-// Close the database connection
 mysqli_close($conn);
 ?>
-
-
-
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -61,15 +49,23 @@ mysqli_close($conn);
 <body>
   <header>
     <nav class="navbar">
-      <div class="logo"><a href="index.html">Daily</a></div>
+      <div class="logo"><a href="index.php">Daily</a></div>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="todo.php">To-Do</a></li>
-        <li><a href="rss.php">RSS Feed</a></li>
-        <li><a href="tracker.html">Tracker</a></li>
-        <li><a href="notes.php">Notes</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="index.php">Home</a></li>
+        <?php if (isset($_SESSION['email'])): ?>
+          <li><a href="todo.php">To-Do</a></li>
+          <li><a href="rss.php">RSS Feed</a></li>
+          <li><a href="tracker.html">Tracker</a></li>
+          <li><a href="notes.php">Notes</a></li>
+        <?php endif; ?>
+        <li><a href="about.php">About</a></li>
         <li><a href="contact.php">Contact</a></li>
+        <?php if (!isset($_SESSION['email'])): ?>
+          <li><a href="login.php" class="btn login-btn">Login</a></li>
+          <li><a href="signup.php" class="btn signup-btn">Sign Up</a></li>
+        <?php else: ?>
+          <li><a href="logout.php" class="btn logout-btn">Sign Out</a></li>
+        <?php endif; ?>
       </ul>
     </nav>
   </header>
