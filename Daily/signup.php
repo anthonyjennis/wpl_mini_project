@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-        $sql = "INSERT INTO `sign-up` (name, email, password) VALUES ('$name', '$email', '$hashed_password')";
+        $sql = "INSERT INTO `sign_up` (name, email, password) VALUES ('$name', '$email', '$hashed_password')";
         $result = mysqli_query($conn, $sql);
 
         if ($result) {

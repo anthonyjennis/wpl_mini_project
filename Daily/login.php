@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = htmlspecialchars($_POST['password']);
 
     // Query user by email
-    $sql = "SELECT * FROM `sign-up` WHERE email='$email'";
+    $sql = "SELECT * FROM `sign_up` WHERE email='$email'";
     $result = mysqli_query($conn, $sql);
 
     if ($result && mysqli_num_rows($result) == 1) {
