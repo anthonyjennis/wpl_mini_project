@@ -86,9 +86,7 @@ if (isset($_POST['update_todo_status'])) {
         <li><a href="index.php">Home</a></li>
         <?php if (isset($_SESSION['user_id'])): ?>
           <li><a href="todo.php">To-Do</a></li>
-          <li><a href="rss.php">RSS Feed</a></li>
-          <li><a href="tracker.php">Tracker</a></li>
-          <li><a href="notes.php">Notes</a></li>
+        <li><a href="notes.php">Notes</a></li>
           <li><a href="about.php">About</a></li>
           <li><a href="contact.php">Contact</a></li>
           <li><a href="logout.php" class="btn logout-btn">Sign Out</a></li>

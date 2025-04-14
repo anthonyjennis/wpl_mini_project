@@ -312,8 +312,6 @@ try {
         <li><a href="index.php">Home</a></li>
         <?php if (isset($_SESSION['email'])): ?>
           <li><a href="todo.php">To-Do</a></li>
-          <li><a href="rss.php">RSS Feed</a></li>
-          <li><a href="tracker.php">Tracker</a></li>
           <li><a href="notes.php">Notes</a></li>
         <?php endif; ?>
         <li><a href="about.php">About</a></li>

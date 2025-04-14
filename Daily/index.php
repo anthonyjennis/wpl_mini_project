@@ -20,8 +20,6 @@ session_start();
         <li><a href="index.php">Home</a></li>
         <?php if (isset($_SESSION['user_id'])): ?>
           <li><a href="todo.php">To-Do</a></li>
-          <li><a href="rss.php">RSS Feed</a></li>
-          <li><a href="tracker.php">Tracker</a></li>
           <li><a href="notes.php">Notes</a></li>
           <li><a href="about.php">About</a></li>
           <li><a href="contact.php">Contact</a></li>
@@ -64,8 +62,6 @@ session_start();
         <div class="feature-card">Static Pages: Home, About, Contact Us</div>
         <div class="feature-card">User Authentication: Login &amp; Sign Up</div>
         <div class="feature-card">To-Do List with full CRUD functionality</div>
-        <div class="feature-card">RSS Feed Aggregator for unified blog feeds</div>
-        <div class="feature-card">Activity Tracker for goal tracking</div>
         <div class="feature-card">Note Taking with nested pages &amp; basic formatting</div>
       </div>
     </section>
