@@ -225,12 +225,10 @@ try {
     }
     
     .btn {
-      padding: 12px 20px;
-      border: none;
-      border-radius: var(--border-radius);
-      cursor: pointer;
-      font-weight: 500;
-      transition: var(--transition);
+      border: 1px solid #007bff;
+      border-radius: 4px;
+      padding: 5px 12px;
+      font-weight: bold;
     }
     
     .primary-btn {
